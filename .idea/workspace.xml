@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afe990b3-dcb9-47fa-8ede-e939f8f50f1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/SplashImage.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/SplashImage.imageset/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/ChangePassword.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/navigation/ParentTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/navigation/Stack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/navigation/Tab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/navigation/TeacherTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/SchoolBuddy.xcodeproj/project.xcworkspace/xcuserdata/mac2018_testing.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/ios/SchoolBuddy.xcodeproj/project.xcworkspace/xcuserdata/mac2018_testing.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/SchoolBuddy/Base.lproj/LaunchScreen.xib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/SchoolBuddy/Base.lproj/LaunchScreen.xib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/SchoolBuddy/Images.xcassets/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTActionSheet.build/Debug-iphonesimulator/RCTActionSheet.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTActionSheet.build/Debug-iphonesimulator/RCTActionSheet.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTAnimation.build/Debug-iphonesimulator/RCTAnimation.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTAnimation.build/Debug-iphonesimulator/RCTAnimation.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTBlob.build/Debug-iphonesimulator/RCTBlob.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTBlob.build/Debug-iphonesimulator/RCTBlob.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTGeolocation.build/Debug-iphonesimulator/RCTGeolocation.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTGeolocation.build/Debug-iphonesimulator/RCTGeolocation.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTLinking.build/Debug-iphonesimulator/RCTLinking.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTLinking.build/Debug-iphonesimulator/RCTLinking.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTNetwork.build/Debug-iphonesimulator/RCTNetwork.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTNetwork.build/Debug-iphonesimulator/RCTNetwork.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTSettings.build/Debug-iphonesimulator/RCTSettings.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTSettings.build/Debug-iphonesimulator/RCTSettings.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTText.build/Debug-iphonesimulator/RCTText.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTText.build/Debug-iphonesimulator/RCTText.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTVibration.build/Debug-iphonesimulator/RCTVibration.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTVibration.build/Debug-iphonesimulator/RCTVibration.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTWebSocket.build/Debug-iphonesimulator/RCTWebSocket.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTWebSocket.build/Debug-iphonesimulator/RCTWebSocket.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTWebSocket.build/Debug-iphonesimulator/fishhook.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RCTWebSocket.build/Debug-iphonesimulator/fishhook.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RNVectorIcons.build/Debug-iphonesimulator/RNVectorIcons.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/RNVectorIcons.build/Debug-iphonesimulator/RNVectorIcons.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/React.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/React.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/jschelpers.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/jschelpers.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/jsinspector.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/jsinspector.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/privatedata.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/privatedata.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/third-party.hmap" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/third-party.hmap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/SchoolBuddy.build/Debug-iphonesimulator/SchoolBuddy.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/SchoolBuddy.build/Debug-iphonesimulator/SchoolBuddy.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/SchoolBuddy.build/Debug-iphonesimulator/SchoolBuddyTests.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Build/Intermediates.noindex/SchoolBuddy.build/Debug-iphonesimulator/SchoolBuddyTests.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonComponent/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonComponent/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonComponent/Common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonComponent/Common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonComponent/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonComponent/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonComponent/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonComponent/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/theme/Color.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/theme/Color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/theme/Value.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/signIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/signIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/navigation/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/navigation/Drawer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -102,14 +59,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="5138" />
+          <entry key="js" value="5150" />
           <entry key="json" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="5138" />
+          <entry key="JavaScript" value="5150" />
         </counts>
       </usages-collector>
     </session>
@@ -142,35 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commonComponent/Header.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="58">
               <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/helper/navigation/Drawer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commonComponent/drawerImage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="29" column="100" lean-forward="true" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -193,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/helper/navigation/Stack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="180">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -202,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/signIn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="32" column="74" lean-forward="true" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+            <state relative-caret-position="264">
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -247,11 +180,11 @@
         <option value="$PROJECT_DIR$/src/helper/theme/Color.js" />
         <option value="$PROJECT_DIR$/src/commonComponent/Common.js" />
         <option value="$PROJECT_DIR$/src/helper/navigation/Stack.js" />
-        <option value="$PROJECT_DIR$/src/component/signIn.js" />
         <option value="$PROJECT_DIR$/src/commonComponent/drawerImage.js" />
-        <option value="$PROJECT_DIR$/src/helper/navigation/Drawer.js" />
         <option value="$PROJECT_DIR$/src/component/ChangePassword.js" />
         <option value="$PROJECT_DIR$/src/commonComponent/Header.js" />
+        <option value="$PROJECT_DIR$/src/helper/navigation/Drawer.js" />
+        <option value="$PROJECT_DIR$/src/component/signIn.js" />
       </list>
     </option>
   </component>
@@ -383,12 +316,12 @@
       <workItem from="1542188927778" duration="140000" />
       <workItem from="1542191132177" duration="5302000" />
       <workItem from="1542255377776" duration="3903000" />
-      <workItem from="1542260492298" duration="23531000" />
+      <workItem from="1542260492298" duration="23851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32876000" />
+    <option name="totallyTimeSpent" value="33196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="40" width="1329" height="691" extended-state="0" />
@@ -546,46 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commonComponent/drawerImage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="29" column="100" lean-forward="true" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/navigation/Stack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/navigation/Drawer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/signIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="32" column="74" lean-forward="true" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -606,12 +499,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/navigation/Stack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonComponent/drawerImage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="29" column="100" lean-forward="true" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/navigation/Drawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/commonComponent/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/signIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,7 +7,11 @@ import {drawerImage} from './../../commonComponent/Common';
 import {DrawerNavigator,DrawerItems} from 'react-navigation';
 import {WindowsHeight,WindowsWidth} from './../../commonComponent/global';
 import ChangePassword from "../../component/ChangePassword";
+import Login from "../../component/signIn";
 const Drawer = DrawerNavigator({
+        Login:{
+            screen:SignIn
+        },
      Class:{
             screen:Home
         },

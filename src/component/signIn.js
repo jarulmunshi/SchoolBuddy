@@ -29,6 +29,7 @@ class SignIn extends Component{
                     />
                     <Input
                         placeholder="Password"
+                        secureTextEntry={true}
                     />
                     <Button onPress={()=>this.props.navigation.navigate('Home')}>LOG IN</Button>
                 </View>
