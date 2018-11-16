@@ -11,7 +11,7 @@ import Color from '../helper/theme/Color'
 import {Card, CardSection} from './Common'
 
 const Slider = (props) => {
-    const {title} = props
+    const {title, url} = props
 
     return(
 

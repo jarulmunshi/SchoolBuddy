@@ -9,7 +9,7 @@ import {WindowsWidth} from './global'
 import {Card, CardSection} from './Common'
 
 const News = (props) => {
-    const {title} = props
+    const {title, content} = props
 
     return(
         <View>
@@ -18,17 +18,7 @@ const News = (props) => {
                     <View>
                         <Text style={[styles.headingStyle, {marginTop: 15}]}>{title}</Text>
                         <View style={styles.newsContainer}>
-                            <Text style={styles.newsTextStyle}>{"LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY. LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY. LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY."}</Text>
-                        </View>
-                    </View>
-                </CardSection>
-            </Card>
-            <Card>
-                <CardSection>
-                    <View>
-                        <Text style={[styles.headingStyle, {marginTop: 15}]}>{title}</Text>
-                        <View style={styles.newsContainer}>
-                            <Text style={styles.newsTextStyle}>{"LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY. LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY. LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TESTING INDUSTRY."}</Text>
+                            <Text style={styles.newsTextStyle}>{content}</Text>
                         </View>
                     </View>
                 </CardSection>

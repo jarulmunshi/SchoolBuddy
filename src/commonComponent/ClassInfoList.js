@@ -6,7 +6,7 @@ import {
 } from 'react-native'
 
 import {Card, CardSection} from './Common'
-import {WindowsWidth,LatoFont} from './global'
+import {WindowsWidth,MyriadFont} from './global'
 
 const ClassInfoList = (props) => {
     const {standard, name, totalStudent, color} =props.classInfo
@@ -56,11 +56,13 @@ const styles = {
         fontSize: 25,
         width: WindowsWidth * 25 /100,
         textAlign: 'center',
+        fontFamily: MyriadFont
     },
     nameContainer: {
         color: '#000',
         fontSize: 14,
-        marginTop: 5
+        marginTop: 5,
+        fontFamily: MyriadFont
     },
     countContainer: {
         color: 'rgb(195,206,233)',
@@ -70,7 +72,7 @@ const styles = {
         fontSize: 12,
         color: 'rgb(117,118,118)',
         marginTop: 5,
-        fontFamily: LatoFont
+        fontFamily: MyriadFont
     },
     imageContainer: {
         width: 20,

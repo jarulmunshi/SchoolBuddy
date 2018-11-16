@@ -7,4 +7,4 @@ import Admin from './src/component/Admin'
 import {name as appName} from './app.json';
 import Stack from './src/helper/navigation/Stack'
 
-AppRegistry.registerComponent(appName, () => Stack);
+AppRegistry.registerComponent(appName, () => Admin);

@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import Color from '../helper/theme/Color'
-import {WindowsHeight,WindowsWidth} from './global';
+import {LatoFont, WindowsHeight, WindowsWidth} from './global';
 
 const width = WindowsWidth - 20
 
@@ -45,7 +45,9 @@ const style = {
         color: '#FFF',
         width: width/3,
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: LatoFont,
+        padding: 5
     }
 }
 
