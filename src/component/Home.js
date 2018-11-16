@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
-import {View,Text,SafeAreaView} from 'react-native';
+import {View,Text,SafeAreaView, Alert} from 'react-native';
 import {Header,Footer} from "../commonComponent/Common";
-import Color from './../helper/theme/Color';
+
+import Color from '../helper/theme/Color'
+
 class Home extends Component{
     static navigationOptions = {
         drawerLabel: `Today's Class`
@@ -14,7 +16,9 @@ class Home extends Component{
             isBack:true
         };
     }
-
+    goBack=()=>{
+        this.props.navigation.openDrawer();
+    }
     render(){
         return(
             <SafeAreaView style={{backgroundColor: Color.headerColor}}>
@@ -22,6 +26,7 @@ class Home extends Component{
                     headerText="Home"
                     iName={this.state.iName}
                     isBack={this.state.isBack}
+                    onBackButtonPress={this.goBack}
                 />
                 <View style={{backgroundColor:"white"}}>
                     <Text>Home page</Text>

@@ -11,10 +11,10 @@ const Footer = (props) =>{
 };
 const styles={
     footerStyle:{
-        top: WindowsHeight - 60,
+        top: WindowsHeight - (WindowsHeight * 0.16),
         //backgroundColor:'red',
         position: 'absolute',
-        height: 60,
+        height: WindowsHeight * 0.16,
         width: WindowsWidth
         //alignItems: 'center'
     }

@@ -5,5 +5,11 @@ export * from './CardSection';
 export * from './Button';
 export * from './Input';
 export * from './Spinner';
+export * from './AdminMenu';
+export * from './ClassInfoList'
+export * from './TeacherInfoList'
+export * from './CommunityInfo'
+export * from './Slider'
+export * from './News'
 export * from './Link';
 export * from './drawerImage';

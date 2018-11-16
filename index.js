@@ -2,7 +2,9 @@
 
 import {AppRegistry} from 'react-native';
 import App from './App';
-import Drawer from './src/helper/navigation/Drawer';
+import Home from './src/component/Home';
+import Admin from './src/component/Admin'
 import {name as appName} from './app.json';
+import Drawer from './src/helper/navigation/Drawer'
 
 AppRegistry.registerComponent(appName, () => Drawer);

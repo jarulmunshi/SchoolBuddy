@@ -9,7 +9,6 @@ const Card = (props) =>{
 };
 const cardStyles ={
     containerStyle:{
-        borderWidth:1,
         borderRadius:2,
         borderColor:'#ddd',
         borderBottomWidth:0,
@@ -18,8 +17,6 @@ const cardStyles ={
         shadowOpacity:0.2,
         shadowRadius:2,
         elavation:1,
-        marginRight:5,
-        marginLeft:5,
         marginTop:10
     }
 };
