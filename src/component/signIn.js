@@ -1,20 +1,59 @@
 import React,{Component} from 'react';
-import {View,Text,SafeAreaView,Image,TouchableOpacity} from 'react-native';
+import {View,Text,SafeAreaView,Image,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
 import {Input,Button,Link} from "../commonComponent/Common";
 import Color from './../helper/theme/Color';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {WindowsWidth,WindowsHeight} from "../commonComponent/global";
+import {emailEmpty,passwordEmpty,checkEmail} from './../validation/Validation';
 class SignIn extends Component{
     constructor(props){
         super(props);
         this.state={
             //iName:'long-arrow-left',
             iName:"bars",
-            isBack:true
+            isBack:true,
+            email:process.env.NODE_ENV === 'development' && 'jarul@gmail.com' || '',
+            password:process.env.NODE_ENV === 'development' && '' || 'jarul',
+            emailError:'',
+            passwordError: '',
+            iconError:''
         };
     }
+    validateUser=()=> {
+        if(emailEmpty(this.state.email) && passwordEmpty(this.state.password)){
+            this.setState({iconError:'exclamation-circle',emailError:'Require',passwordError:'Require'});
+        }
+        else if(emailEmpty(this.state.email) || passwordEmpty(this.state.password)){
+            if(emailEmpty(this.state.email)){
+                this.setState({iconError:'exclamation-circle',emailError:'Require'});
+            }
+            else if(passwordEmpty(this.state.password)){
+                this.setState({iconError:'exclamation-circle',passwordError:'Require'});
+            }
+        }
+        else if(!checkEmail(this.state.email)){
+            this.setState({iconError:'exclamation-circle',emailError:'Invalid'});
+        }
+        else {
+            const data={
+                email:this.state.email,
+                password:this.state.password
+            };
+            if(this.state.email === 'admin@gmail.com' && this.state.password === 'admin'){
+                this.props.navigation.navigate('Admin');
+            }else if(this.state.email === 'jarul@gmail.com' && this.state.password === 'jarul'){
+                this.props.navigation.navigate('Home');
+            }
+        }
+
+
+        };
 
     render(){
+        const {textStyle}=styles;
         return(
+            <SafeAreaView style={{backgroundColor:'white',flex:1}}>
+            <KeyboardAvoidingView enabled={true} keyboardVerticalOffset={100}>
             <View>
                 <View style={{ width: WindowsWidth, height:WindowsHeight * 0.25 }} >
                     <Image source={require('./../images/Cloud.png')} resizeMode="cover"  />
@@ -24,14 +63,38 @@ class SignIn extends Component{
                            style={{ width: WindowsWidth, height: WindowsHeight * 0.15}} />
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Input
-                        placeholder="Email"
-                    />
-                    <Input
-                        placeholder="Password"
-                        secureTextEntry={true}
-                    />
-                    <Button onPress={()=>this.props.navigation.navigate('Home')}>LOG IN</Button>
+                    <View style={{flexDirection: 'row'}}>
+                        <View>
+                            <Input
+                                onChange={(value)=>this.setState({email:value,emailError:''})}
+                                placeholder="Email"
+                                value={this.state.email}
+                                keyboardType="email-address"
+                                autoCapitalize={false}
+                            />
+                        </View>
+                        <View style={{left:15,alignItems:'center',justifyContent: 'center'}}>
+                            {this.state.emailError !=="" &&
+                            <Icon name={this.state.iconError} size={20} style={{color: 'red'}}/>}
+                        </View>
+                    </View>
+
+                    <View style={{flexDirection: 'row'}}>
+                        <View>
+                            <Input
+                                onChange={(value)=>this.setState({password:value,passwordError:''})}
+                                value={this.state.password}
+                                placeholder="Password"
+                                secureTextEntry={true}
+                            />
+                        </View>
+                        <View style={{left:15,alignItems:'center',justifyContent: 'center'}}>
+                            {this.state.passwordError !=="" &&
+                            <Icon name={this.state.iconError} size={20} style={{color: 'red'}}/>}
+                        </View>
+                    </View>
+
+                    <Button onPress={()=>this.validateUser()}>LOG IN</Button>
                 </View>
                 <View style={{alignItems: 'center'}}>
                     <Link>Forgot Password?</Link>
@@ -45,7 +108,15 @@ class SignIn extends Component{
                            style={{ width: WindowsWidth, height: 135 }}/>
                 </View>
             </View>
+            </KeyboardAvoidingView>
+            </SafeAreaView>
         )
     }
 }
+const styles={
+    textStyle:{
+        color:'red',
+        fontSize:16,
+    }
+};
 export default SignIn;

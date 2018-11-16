@@ -32,7 +32,7 @@ const drawerImage=(props)=> {
                 </TouchableOpacity>
             </View>
             <View style={{marginTop: WindowsHeight * 0.45 }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
                     <Text style={{textAlign: 'center',color:"red",fontSize:25}}>Log out</Text>
                 </TouchableOpacity>
             </View>

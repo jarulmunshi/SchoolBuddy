@@ -5,6 +5,6 @@ import App from './App';
 import Home from './src/component/Home';
 import Admin from './src/component/Admin'
 import {name as appName} from './app.json';
-import Drawer from './src/helper/navigation/Drawer'
+import Stack from './src/helper/navigation/Stack'
 
-AppRegistry.registerComponent(appName, () => Drawer);
+AppRegistry.registerComponent(appName, () => Stack);

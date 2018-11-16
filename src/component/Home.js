@@ -21,7 +21,7 @@ class Home extends Component{
     }
     render(){
         return(
-            <SafeAreaView style={{backgroundColor: Color.headerColor}}>
+            <SafeAreaView style={{backgroundColor:'white',flex:1}}>
                 <Header
                     headerText="Home"
                     iName={this.state.iName}

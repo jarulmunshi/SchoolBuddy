@@ -9,10 +9,7 @@ import {WindowsHeight,WindowsWidth} from './../../commonComponent/global';
 import ChangePassword from "../../component/ChangePassword";
 import Login from "../../component/signIn";
 const Drawer = DrawerNavigator({
-        /*Login:{
-            screen:SignIn
-        },*/
-     Home:{
+        Home:{
             screen:Home
         },
         ChangePassword:{

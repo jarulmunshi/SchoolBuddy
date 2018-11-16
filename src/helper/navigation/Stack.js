@@ -1,11 +1,8 @@
 import React from 'react';
 import Login from './../../component/signIn';
 import Home from './../../helper/navigation/Drawer';
-import ChangePassword from './../../component/ChangePassword';
+import Admin from './../../component/Admin';
 import {createStackNavigator} from 'react-navigation';
-import Report from './../../component/Report';
-import Timetable from './../../component/Timetable';
-import GetStart from './../../component/getStarted';
 const stack = createStackNavigator(
     {
         Login:{
@@ -14,8 +11,8 @@ const stack = createStackNavigator(
         Home:{
             screen:Home
         },
-        ChangePassword:{
-            screen:ChangePassword
+        Admin:{
+            screen:Admin
         }
     },
     {

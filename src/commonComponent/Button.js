@@ -1,12 +1,14 @@
 import React from 'react';
-import {TouchableOpacity,Text} from 'react-native';
+import {TouchableOpacity,Text,View} from 'react-native';
 import Color from './../helper/theme/Color';
 import {WindowsWidth} from "./global";
-const Button = ({onPress,children}) =>{
+const Button = ({onPress,children,style}) =>{
     return(
-        <TouchableOpacity onPress={onPress} style={buttonStyles.buttonStyle}>
-            <Text style={buttonStyles.textStyle}>{children}</Text>
-        </TouchableOpacity>
+        <View style={style}>
+            <TouchableOpacity onPress={onPress} style={buttonStyles.buttonStyle}>
+                <Text style={buttonStyles.textStyle}>{children}</Text>
+            </TouchableOpacity>
+        </View>
     )
 };
 const buttonStyles={

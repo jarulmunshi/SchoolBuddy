@@ -32,14 +32,17 @@ const headerStyles={
         backgroundColor: Color.headerColor,
         height: WindowsHeight * 0.062,
         flexDirection: 'row',
-        justifyContent:'space-between',
-        width:WindowsWidth
+        width:WindowsWidth,
     },
     subViewStyle:{
-       // left:WindowsWidth * 0.02,
+        width: WindowsWidth * 0.08,
+        marginLeft: 15,
+        justifyContent: 'center'
     },
     subViewStyle2:{
-        alignItems:'center'
+        width:WindowsWidth,
+        alignItems:'center',
+        justifyContent: 'center'
     },
     headerStyle:{
         borderColor:'#ddd',
@@ -53,7 +56,8 @@ const headerStyles={
         fontWeight:'bold',
         fontSize:20,
         color:Color.headerTextColor,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginRight:WindowsWidth * 0.24,
     }
 };
 export {Header};
