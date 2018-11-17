@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import {View,Text,SafeAreaView,Image,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
+import {View, Text, SafeAreaView, Image, TouchableOpacity, KeyboardAvoidingView, StatusBar} from 'react-native';
 import {Input,Button,Link} from "../commonComponent/Common";
 import Color from './../helper/theme/Color';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -19,6 +20,11 @@ class SignIn extends Component{
             iconError:''
         };
     }
+
+    componentDidMount(){
+        SplashScreen.hide();
+    }
+
     validateUser=()=> {
         if(emailEmpty(this.state.email) && passwordEmpty(this.state.password)){
             this.setState({iconError:'exclamation-circle',emailError:'Require',passwordError:'Require'});
@@ -52,7 +58,10 @@ class SignIn extends Component{
     render(){
         const {textStyle}=styles;
         return(
-            <SafeAreaView style={{backgroundColor:'white',flex:1}}>
+            <View style={{backgroundColor:'white',flex:1}}>
+                <StatusBar
+                    backgroundColor={Color.headerColor}
+                />
             <KeyboardAvoidingView enabled={true} keyboardVerticalOffset={100}>
             <View>
                 <View style={{ width: WindowsWidth, height:WindowsHeight * 0.25 }} >
@@ -73,7 +82,9 @@ class SignIn extends Component{
                                 autoCapitalize={false}
                             />
                         </View>
-                        <View style={{left:15,alignItems:'center',justifyContent: 'center'}}>
+                        <View style={{left:WindowsWidth *0.85,alignItems:'center',justifyContent: 'center',
+                            position: 'absolute'
+                            ,top:WindowsHeight * 0.020}}>
                             {this.state.emailError !=="" &&
                             <Icon name={this.state.iconError} size={20} style={{color: 'red'}}/>}
                         </View>
@@ -88,7 +99,9 @@ class SignIn extends Component{
                                 secureTextEntry={true}
                             />
                         </View>
-                        <View style={{left:15,alignItems:'center',justifyContent: 'center'}}>
+                        <View style={{left:WindowsWidth *0.85,alignItems:'center',justifyContent: 'center',
+                            position: 'absolute'
+                            ,top:WindowsHeight * 0.020}}>
                             {this.state.passwordError !=="" &&
                             <Icon name={this.state.iconError} size={20} style={{color: 'red'}}/>}
                         </View>
@@ -109,7 +122,7 @@ class SignIn extends Component{
                 </View>
             </View>
             </KeyboardAvoidingView>
-            </SafeAreaView>
+            </View>
         )
     }
 }

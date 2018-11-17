@@ -12,19 +12,24 @@ const drawerImage=(props)=> {
             }}
         >
             <View style={{paddingLeft: WindowsWidth * 0.60}}>
-                <Icon name="times" size={30} style={{color:Color.drawerTextColor}}/>
+                <TouchableOpacity onPress={()=>props.navigation.closeDrawer()}>
+                    <Icon name="times" size={30} style={{color:Color.drawerTextColor}}/>
+                </TouchableOpacity>
             </View>
             <View style={{alignItems: 'center',height:WindowsHeight * 0.01}}>
                 <Image source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15}} resizeMode="contain"/>
             </View>
             <View style={{top:WindowsHeight * 0.25}}>
-                <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}>
+                <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
+                                  onPress={()=>props.navigation.navigate('TodaysClass')}>
                     <Text style={style.textStyle}>Today's Classes</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={style.viewStyle}>
+                <TouchableOpacity style={style.viewStyle}
+                                  onPress={()=>props.navigation.navigate('StudyMaterial')}>
                     <Text style={style.textStyle}>Study Materials</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={style.viewStyle}>
+                <TouchableOpacity style={style.viewStyle}
+                                  onPress={()=>props.navigation.navigate('File')}>
                     <Text style={style.textStyle}>Manage Class</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('ChangePassword')}>

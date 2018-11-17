@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text,View,TouchableWithoutFeedback,StatusBar} from 'react-native';
+import {Text, View, TouchableWithoutFeedback, StatusBar, Image} from 'react-native';
 import Color from './../helper/theme/Color';
 import {WindowsHeight,WindowsWidth} from './global';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const Header = (props) =>{
-        const {textStyle,headerStyle,viewStyle,subViewStyle,subViewStyle2}=headerStyles;
+        const {textStyle,viewStyle,subViewStyle,subViewStyle2,imageContainer1}=headerStyles;
         return(
         <View>
             {/*<StatusBar
@@ -23,6 +23,7 @@ const Header = (props) =>{
                 <View style={subViewStyle2}>
                     <Text style={textStyle}>{props.headerText}</Text>
                 </View>
+                {/*{props.isIcon &&<Image style={imageContainer1} source={require('../images/cloudUp.png')}/>}*/}
             </View>
         </View>
     )
@@ -58,6 +59,10 @@ const headerStyles={
         color:Color.headerTextColor,
         textAlign: 'center',
         marginRight:WindowsWidth * 0.24,
+    },
+    imageContainer1: {
+        width: 65,
+        height: 45,
     }
 };
 export {Header};

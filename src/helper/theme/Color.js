@@ -7,5 +7,5 @@ module.exports={
     menuNormalColor: 'rgb(0,68,94)',
     editIcon: 'rgb(94,138,155)',
     headerTextColor:'rgb(255,255,255)',
-    drawerTextColor:'rgb(0,27,66)'
+    drawerTextColor:'rgb(0,76,102)'
 };

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text,SafeAreaView,Image,TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {View, Text, SafeAreaView, Image, TouchableOpacity, KeyboardAvoidingView, StatusBar,Alert} from 'react-native';
 import {Input,Button,Link,Header,Footer} from "../commonComponent/Common";
 import Color from './../helper/theme/Color';
 import {WindowsWidth,WindowsHeight} from "../commonComponent/global";
@@ -20,6 +20,9 @@ class ChangePassword extends Component{
             npassError:''
         };
     }
+    onBackButtonPress=()=>{
+        this.props.navigation.goBack();
+    };
     validateUser=()=> {
         if(passwordEmpty(this.state.cpass) && passwordEmpty(this.state.opass) && passwordEmpty(this.state.npass)){
             this.setState({iconError:'exclamation-circle',passError:'Require',cpassError:'Require',npassError:'Require'});
@@ -36,19 +39,22 @@ class ChangePassword extends Component{
             }
         }
         else {
-            const data={
-                email:this.state.email,
-                password:this.state.password
-            };
-            this.props.navigation.navigate('Home');
-            // if(role === 'admin'){
-            //     this.props.navigation.navigate('Admin',{res,name:res.username,data:this.state.userData});
-            // }else if(role === 'teacher'){
-            //     this.props.navigation.navigate('TeacherTab',{res,name:res.username,data:this.state.userData});
-            // }else {
-            //     this.props.navigation.navigate('ParentTab',{res,name:res.username,data:this.state.userData});
-            // }}
-
+            debugger;
+            if(this.state.npass !== this.state.cpass){
+                debugger;
+                Alert.alert('New password and confirm password must be same..!');
+            }
+            else {
+                debugger;
+                this.props.navigation.navigate('Home');
+                // if(role === 'admin'){
+                //     this.props.navigation.navigate('Admin',{res,name:res.username,data:this.state.userData});
+                // }else if(role === 'teacher'){
+                //     this.props.navigation.navigate('TeacherTab',{res,name:res.username,data:this.state.userData});
+                // }else {
+                //     this.props.navigation.navigate('ParentTab',{res,name:res.username,data:this.state.userData});
+                // }}
+            }
 
         }
 
@@ -56,10 +62,14 @@ class ChangePassword extends Component{
     render(){
         return(
             <SafeAreaView style={{backgroundColor:'white',flex:1}}>
+                <StatusBar
+                    backgroundColor={Color.headerColor}
+                />
                 <Header
                     headerText="Change Password"
                     iName={this.state.iName}
                     isBack={this.state.isBack}
+                    onBackButtonPress={this.onBackButtonPress}
                 />
                 <KeyboardAvoidingView enabled={true} keyboardVerticalOffset={100}>
                 <View style={{alignItems: 'center'}}>

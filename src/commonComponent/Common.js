@@ -13,3 +13,6 @@ export * from './Slider'
 export * from './News'
 export * from './Link';
 export * from './drawerImage';
+export * from './TodayClassInfo';
+export * from './StudyMaterialInfo';
+export * from './FileInfo';

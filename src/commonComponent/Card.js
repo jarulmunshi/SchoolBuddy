@@ -17,7 +17,7 @@ const cardStyles ={
         shadowOpacity:0.2,
         shadowRadius:2,
         elavation:1,
-        marginTop:10
+        marginTop:10,
     }
 };
 export {Card};

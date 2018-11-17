@@ -1,19 +1,29 @@
 import React from 'react';
 import { Image,Text } from 'react-native';
-import SignIn from './../../component/signIn';
+import TodaysClass from './../../component/TodaysClass';
 import Home from './../../component/Home';
 import Color from './../theme/Color';
 import {drawerImage} from './../../commonComponent/Common';
 import {DrawerNavigator,DrawerItems} from 'react-navigation';
 import {WindowsHeight,WindowsWidth} from './../../commonComponent/global';
 import ChangePassword from "../../component/ChangePassword";
-import Login from "../../component/signIn";
+import StudyMaterial from "../../component/StudyMaterial";
+import File from "../../component/File";
 const Drawer = DrawerNavigator({
         Home:{
             screen:Home
         },
         ChangePassword:{
             screen:ChangePassword
+        },
+        TodaysClass:{
+            screen:TodaysClass
+        },
+        StudyMaterial:{
+            screen:StudyMaterial
+        },
+        File:{
+            screen:File
         }
 },
     {

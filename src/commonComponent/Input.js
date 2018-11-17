@@ -31,7 +31,7 @@ const inputStyles={
         color:Color.headerColor,
         borderWidth:0.5,
         borderColor:Color.headerColor,
-        fontSize:16,
+        fontSize:20,
         height: WindowsHeight * 0.06,
         width:WindowsWidth * 0.8,
         paddingLeft:15
