@@ -21,8 +21,9 @@ class ChangePassword extends Component{
         };
     }
     onBackButtonPress=()=>{
-        this.props.navigation.goBack();
+        this.props.navigation.openDrawer();
     };
+
     validateUser=()=> {
         if(passwordEmpty(this.state.cpass) && passwordEmpty(this.state.opass) && passwordEmpty(this.state.npass)){
             this.setState({iconError:'exclamation-circle',passError:'Require',cpassError:'Require',npassError:'Require'});

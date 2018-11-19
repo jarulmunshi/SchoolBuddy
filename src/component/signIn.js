@@ -49,6 +49,8 @@ class SignIn extends Component{
                 this.props.navigation.navigate('Admin');
             }else if(this.state.email === 'jarul@gmail.com' && this.state.password === 'jarul'){
                 this.props.navigation.navigate('Home');
+            }else if(this.state.email === 'parent@gmail.com' && this.state.password === 'parent'){
+                this.props.navigation.navigate('Parent');
             }
         }
 
@@ -79,7 +81,7 @@ class SignIn extends Component{
                                 placeholder="Email"
                                 value={this.state.email}
                                 keyboardType="email-address"
-                                autoCapitalize={false}
+                                autoCapitalize='none'
                             />
                         </View>
                         <View style={{left:WindowsWidth *0.85,alignItems:'center',justifyContent: 'center',

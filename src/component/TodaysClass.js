@@ -12,7 +12,7 @@ import FAB from 'react-native-fab'
 import Color from '../helper/theme/Color'
 import {WindowsHeight} from '../commonComponent/global';
 import {
-    AdminMenu,
+    CustomMenu,
     TodaysClassInfo,
     Footer,
     TeacherInfoList,

@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Text,
     View,
-    Image
+    Image, Platform
 } from 'react-native'
 
 import {Card, CardSection} from './Common'
@@ -41,7 +41,7 @@ const TeacherInfoList = (props) => {
 
 const styles = {
     colorView: {
-        width: 2,
+        width: Platform.OS === 'ios'? 2 : 4,
     },
     infoContainer: {
         padding: 10,

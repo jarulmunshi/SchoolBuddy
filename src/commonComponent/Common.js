@@ -5,7 +5,7 @@ export * from './CardSection';
 export * from './Button';
 export * from './Input';
 export * from './Spinner';
-export * from './AdminMenu';
+export * from './CustomMenu';
 export * from './ClassInfoList'
 export * from './TeacherInfoList'
 export * from './CommunityInfo'
@@ -16,3 +16,8 @@ export * from './drawerImage';
 export * from './TodayClassInfo';
 export * from './StudyMaterialInfo';
 export * from './FileInfo';
+export * from './CalendarView';
+export * from './ClassNotesInfo';
+export * from './AddNotes';
+export * from './AttendanceList';
+export * from './DrawerImageParent';

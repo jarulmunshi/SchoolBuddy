@@ -17,7 +17,7 @@ const drawerImage=(props)=> {
                 </TouchableOpacity>
             </View>
             <View style={{alignItems: 'center',height:WindowsHeight * 0.01}}>
-                <Image source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15}} resizeMode="contain"/>
+                <Image source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15, width: WindowsWidth * 0.60}} resizeMode="contain"/>
             </View>
             <View style={{top:WindowsHeight * 0.25}}>
                 <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
@@ -29,7 +29,7 @@ const drawerImage=(props)=> {
                     <Text style={style.textStyle}>Study Materials</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.viewStyle}
-                                  onPress={()=>props.navigation.navigate('File')}>
+                                  onPress={()=>props.navigation.navigate('ManageClass')}>
                     <Text style={style.textStyle}>Manage Class</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('ChangePassword')}>

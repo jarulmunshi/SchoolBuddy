@@ -10,8 +10,10 @@ import Color from '../helper/theme/Color'
 import {LatoFont, WindowsHeight, WindowsWidth} from './global';
 
 const width = WindowsWidth - 20
+var tab = 0
 
-const AdminMenu = (props) => {
+const CustomMenu = (props) => {
+    tab = props.menus.length
     return(
         <View style={style.container}>
             {
@@ -24,7 +26,7 @@ const AdminMenu = (props) => {
                             i === 0 ? { borderTopLeftRadius: 5, borderBottomLeftRadius: 5 } : null,
                             i === props.menus.length - 1 ? { borderTopRightRadius: 5, borderBottomRightRadius: 5 } : null
                         ]}>
-                            <Text style={style.textStyle}>{menu}</Text>
+                            <Text style={[style.textStyle, {width: width/tab}]}>{menu}</Text>
                     </TouchableOpacity>
                 )})
             }
@@ -43,7 +45,6 @@ const style = {
     textStyle: {
         fontSize: 15,
         color: '#FFF',
-        width: width/3,
         justifyContent: 'center',
         textAlign: 'center',
         fontFamily: LatoFont,
@@ -51,4 +52,4 @@ const style = {
     }
 }
 
-export {AdminMenu}
+export {CustomMenu}

@@ -11,7 +11,7 @@ import FAB from 'react-native-fab'
 
 import Color from '../helper/theme/Color'
 import {WindowsHeight} from '../commonComponent/global';
-import {AdminMenu, ClassInfoList, Footer, TeacherInfoList, CommunityInfo, Header} from '../commonComponent/Common'
+import {CustomMenu, ClassInfoList, Footer, TeacherInfoList, CommunityInfo, Header} from '../commonComponent/Common'
 
 export default class Admin extends Component{
 
@@ -171,7 +171,7 @@ export default class Admin extends Component{
 
                 <View style={{marginTop: 20, height: WindowsHeight - (WindowsHeight * 0.222)}}>
 
-                    <AdminMenu
+                    <CustomMenu
                         menus={["Class", "Teacher", "Community"]}
                         active={this.state.active}
                         activeChange={(value) => this.changeActiveState(value)}

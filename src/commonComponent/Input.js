@@ -2,21 +2,22 @@ import React from 'react';
 import {TextInput,Text,View} from 'react-native';
 import Color from './../helper/theme/Color';
 import {WindowsWidth,WindowsHeight} from "./global";
-const Input =({label,value,onChange,placeholder,secureTextEntry,keyboardType,editable,autoCapitalize,style,borderWidth,borderColor})=>{
+const Input =({label,value,onChange,placeholder,secureTextEntry,keyboardType,editable,autoCapitalize,style,borderWidth,borderColor,multiline,height,placeholderTextColor,color})=>{
     return(
      <View style={[inputStyles.containerStyle,style]}>
          <TextInput
              secureTextEntry={secureTextEntry}
              placeholder={placeholder}
-             placeholderTextColor={Color.headerColor}
+             placeholderTextColor={placeholderTextColor ? {placeholderTextColor} : Color.headerColor}
              autoCorrect={false}
              value={value}
              onChangeText={onChange}
-             style={[inputStyles.inputStyle,borderColor ? {borderColor} : null ,borderWidth ? {borderWidth}: null]}
+             style={[inputStyles.inputStyle,borderColor ? {borderColor} : null ,borderWidth ? {borderWidth}: null, height ? {height}: null, color? {color} : Color.headerColor]}
              keyboardType={keyboardType||'default'}
              editable={editable||true}
              autoCapitalize={autoCapitalize||true}
              underlineColorAndroid={'transparent'}
+             multiline={multiline}
          />
      </View>
     )
