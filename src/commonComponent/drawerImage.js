@@ -49,12 +49,12 @@ const style={
         borderBottomWidth: 1,
         borderBottomColor:'gray',
         height:WindowsHeight * 0.08,
-        alignItems: 'center',
         justifyContent: 'center'
     },
     textStyle:{
         color:Color.drawerTextColor,
-        fontSize: 18
+        fontSize: 18,
+        marginLeft: 10
     }
 }
 

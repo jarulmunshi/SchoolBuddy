@@ -18,7 +18,7 @@ const drawerImageparent=(props)=> {
                 </View>
                 <TouchableOpacity style={{alignItems: 'center',height:WindowsHeight * 0.01}}
                                   onPress={()=>props.navigation.navigate('StudyMaterial')}>
-                    <Image source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15}} resizeMode="contain"/>
+                    <Image onPress={()=>props.navigation.navigate('StudyMaterial')} source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15, width: WindowsWidth * 0.60}} resizeMode="contain"/>
                 </TouchableOpacity>
                 <View style={{top:WindowsHeight * 0.20}}>
                     <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
@@ -26,14 +26,14 @@ const drawerImageparent=(props)=> {
                         <Text style={style.textStyle}>Attendance / Notes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
-                                      onPress={()=>props.navigation.navigate('StudyMaterial')}>
+                                      onPress={()=>props.navigation.navigate('TimeTable')}>
                         <Text style={style.textStyle}>Time Table</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
-                                      onPress={()=>props.navigation.navigate('File')}>
+                                      onPress={()=>props.navigation.navigate('Community')}>
                         <Text style={style.textStyle}>Community</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('ChangePassword')}>
+                    <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('Message')}>
                         <Text style={style.textStyle}>Messages</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('StudyMaterial')}>
@@ -56,12 +56,12 @@ const style={
         borderBottomWidth: 1,
         borderBottomColor:'gray',
         height:WindowsHeight * 0.08,
-        alignItems: 'center',
         justifyContent: 'center'
     },
     textStyle:{
         color:Color.drawerTextColor,
-        fontSize: 18
+        fontSize: 18,
+        marginLeft: 10
     }
 }
 

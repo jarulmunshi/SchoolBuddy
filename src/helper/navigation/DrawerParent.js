@@ -9,6 +9,9 @@ import {WindowsHeight,WindowsWidth} from './../../commonComponent/global';
 import ChangePassword from "../../component/ChangePassword";
 import StudyMaterial from "../../component/StudyMaterial";
 import File from "../../component/File";
+import TimeTable from "../../component/TimeTable";
+import Community from "../../component/Community";
+import Message from "../../component/Message";
 
 const DrawerParents = DrawerNavigator({
         Home:{
@@ -25,6 +28,15 @@ const DrawerParents = DrawerNavigator({
         },
         File:{
             screen:File
+        },
+        TimeTable: {
+            screen: TimeTable
+        },
+        Community: {
+            screen: Community
+        },
+        Message: {
+            screen: Message
         }
     },
     {

@@ -14,6 +14,7 @@ import {
     Footer,
     Header
 } from '../commonComponent/Common'
+import StudyMaterial from "./StudyMaterial";
 
 export default class File extends Component{
 
@@ -46,7 +47,7 @@ export default class File extends Component{
         isIcon:true
     };
     goBack=()=>{
-        this.props.navigation.goBack();
+        this.props.navigation.navigate('StudyMaterial');
     };
     changeActiveState(value){
         this.setState({

@@ -21,3 +21,4 @@ export * from './ClassNotesInfo';
 export * from './AddNotes';
 export * from './AttendanceList';
 export * from './DrawerImageParent';
+export * from './TimeTableList';

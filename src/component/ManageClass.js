@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 import FAB from 'react-native-fab'
 
-import {WindowsHeight} from '../commonComponent/global';
+import {WindowsHeight, WindowsWidth} from '../commonComponent/global';
 import {Header, Footer, CustomMenu, CalendarView, ClassNotesInfo, AddNote, AttendanceList} from '../commonComponent/Common'
 import Color from '../helper/theme/Color'
 
@@ -142,7 +142,8 @@ export default class ManageClass extends Component{
             'title': title,
             'description': description,
             'createdDate': '12 NOV 2018',
-            'color': 'black'
+            'color': 'rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')'
+            //'#'+(Math.random()*0xFFFFFF<<0).toString(16) generating random color
 
         }
         newState.notesList.push(newNote)
@@ -189,7 +190,7 @@ export default class ManageClass extends Component{
                             <View style={{flex: 1}}>
                                 <View style={styles.attendanceContainer}>
                                     <TouchableOpacity onPress={() => this.setState({showCalendar: true})}>
-                                        <View style={{flexDirection: 'row'}}>
+                                        <View style={{flexDirection: 'row', width: WindowsWidth/3,}}>
                                             <Image
                                                 source={require('../images/calendar.png')}
                                                 style={styles.imageStyle}
@@ -198,12 +199,18 @@ export default class ManageClass extends Component{
                                         </View>
                                     </TouchableOpacity>
 
-                                    <View style={{flexDirection: 'row'}}>
-                                        <Text style={[styles.textStyle, {color: 'rgb(109,109,109)'}]}>{'PRESENT'}</Text>
+                                    <View style={{flexDirection: 'row', width: WindowsWidth/3, justifyContent: 'center'}}>
+                                        <Text style={[styles.textStyle, {color: 'rgb(109,109,109)', fontSize: 20}]}>{'PRESENT'}</Text>
+                                        <View style={[styles.CircleShapeView, {backgroundColor: '#79AF1B'}]}>
+                                            <Text style={{color:'#FFF', fontSize: 14}}>{10}</Text>
+                                        </View>
                                     </View>
 
-                                    <View style={{flexDirection: 'row'}}>
-                                        <Text style={[styles.textStyle, {color: 'rgb(109,109,109)'}]}>{'ABSENT'}</Text>
+                                    <View style={{flexDirection: 'row', width: WindowsWidth/3, justifyContent: 'center'}}>
+                                        <Text style={[styles.textStyle, {color: 'rgb(109,109,109)', fontSize: 20}]}>{'ABSENT'}</Text>
+                                        <View style={[styles.CircleShapeView, {backgroundColor: '#AC0119'}]}>
+                                            <Text style={{color:'#FFF', fontSize: 14}}>{5}</Text>
+                                        </View>
                                     </View>
                                 </View>
                                 <ScrollView style={{marginTop: 10}}>
@@ -241,6 +248,7 @@ export default class ManageClass extends Component{
                         titleValue={this.state.title}
                         description={(value) => this.changeDescription(value)}
                         descriptionValue={this.state.description}
+                        heading={'Add Notes'}
                     />
                 }
 
@@ -260,15 +268,23 @@ const styles = {
         backgroundColor: 'rgb(241,241,241)',
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 5
+        padding: 5,
+        width: WindowsWidth
     },
     imageStyle: {
         height: 25,
         width: 25
     },
     textStyle: {
-        fontSize: 22,
+        fontSize: 18,
         marginLeft: 5,
-        color: Color.extraDark
-    }
+        color: Color.extraDark,
+    },
+    CircleShapeView: {
+        width: 20,
+        height: 20,
+        borderRadius: 20/2,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 }

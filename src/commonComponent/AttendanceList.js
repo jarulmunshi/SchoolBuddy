@@ -3,16 +3,15 @@ import {
     Text,
     View,
     Platform,
-    Switch
 } from 'react-native'
-//import Switch from 'react-native-customisable-switch';
+import Switch from 'react-native-customisable-switch';
 
 import {Card, CardSection} from './Common'
 import {MyriadFont,WindowsWidth} from './global'
 
 const AttendanceList = (props) => {
     const {id, rollNo, name, present, color} =props.notesInfo
-
+    debugger
     return(
         <Card>
             <CardSection>
@@ -23,18 +22,19 @@ const AttendanceList = (props) => {
 
                     <View style={styles.dataRow}>
                         <Text style={styles.nameStyle}>{name}</Text>
-                        {/*<Switch
-                            defaultValue={present}
-                            activeText={'P'}
-                            inactiveText={'A'}
-                            activeTextColor={'#FFF'}
-                            inactiveTextColor={'#FFF'}
-                            activeBackgroundColor={'#F00'}
-                            inactiveBackgroundColor={'#0F0'}
-                        />*/}
                         <Switch
+                            defaultValue={true}
                             value={present}
-                            onValueChange={() => props.toggleAttendance(id-1, present)}
+                            activeText={'A'}
+                            inactiveText={'P'}
+                            activeTextColor={'#FFF'}
+                            fontSize={20}
+                            inactiveTextColor={'#FFF'}
+                            activeBackgroundColor={'#AC0119'}
+                            inactiveBackgroundColor={'#79AF1B'}
+                            onChangeValue={(value) => {
+                                props.toggleAttendance(id-1, present)
+                            }}
                         />
                     </View>
                 </View>

@@ -14,7 +14,7 @@ const AddNote = (props) => {
         <TouchableOpacity  style={{height:WindowsHeight,width:WindowsWidth,backgroundColor:'rgba(0,0,0,0.5)',position:'absolute',justifyContent:'center',alignItems:'center'}} onPress={props.toggle}>
             <View style={styles.viewContainer}>
                 <View style={styles.headingContainer}>
-                    <Text style={styles.textStyle}>{'Add Notes'}</Text>
+                    <Text style={styles.textStyle}>{props.heading}</Text>
                 </View>
                 <View style={{margin: 10}}>
                     <Input

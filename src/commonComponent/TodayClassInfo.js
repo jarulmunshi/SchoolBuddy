@@ -16,7 +16,7 @@ const TodayClassInfo = (props) => {
             <CardSection>
                 <View style={[styles.colorView, {backgroundColor: color}]}></View>
 
-                <View style={styles.infoContainer}>
+                <View style={styles.timingContainer}>
                     <Text style={styles.standardContainer}>{timing}</Text>
                 </View>
 
@@ -40,7 +40,7 @@ const styles = {
     colorView: {
         width: 2,
     },
-    infoContainer: {
+    timingContainer: {
         padding: 10,
         width: WindowsWidth * 55 /100
     },
@@ -51,8 +51,6 @@ const styles = {
     standardContainer: {
         color: 'rgb(7, 7, 7)',
         fontSize: 40,
-        width: WindowsWidth * 25 /100,
-        textAlign: 'center',
         fontFamily: MyriadFont
     },
     nameContainer: {
