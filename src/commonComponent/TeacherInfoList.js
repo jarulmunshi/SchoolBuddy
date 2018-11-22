@@ -41,7 +41,7 @@ const TeacherInfoList = (props) => {
 
 const styles = {
     colorView: {
-        width: Platform.OS === 'ios'? 2 : 4,
+        width: 3,
     },
     infoContainer: {
         padding: 10,

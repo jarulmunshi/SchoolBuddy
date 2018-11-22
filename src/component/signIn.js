@@ -1,11 +1,20 @@
 import React,{Component} from 'react';
 import SplashScreen from 'react-native-splash-screen'
-import {View, Text, SafeAreaView, Image, TouchableOpacity, KeyboardAvoidingView, StatusBar} from 'react-native';
+import {
+    View,
+    Text,
+    Image,
+    KeyboardAvoidingView,
+    StatusBar,
+    AsyncStorage
+} from 'react-native';
 import {Input,Button,Link} from "../commonComponent/Common";
 import Color from './../helper/theme/Color';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {WindowsWidth,WindowsHeight} from "../commonComponent/global";
 import {emailEmpty,passwordEmpty,checkEmail} from './../validation/Validation';
+import {NavigationActions, StackActions} from "react-navigation";
+
 class SignIn extends Component{
     constructor(props){
         super(props);
@@ -13,8 +22,8 @@ class SignIn extends Component{
             //iName:'long-arrow-left',
             iName:"bars",
             isBack:true,
-            email:process.env.NODE_ENV === 'development' && 'jarul@gmail.com' || '',
-            password:process.env.NODE_ENV === 'development' && '' || 'jarul',
+            email:process.env.NODE_ENV === 'development' && 'parent@gmail.com' || '',
+            password:process.env.NODE_ENV === 'development' && '' || 'parent',
             emailError:'',
             passwordError: '',
             iconError:''
@@ -25,7 +34,7 @@ class SignIn extends Component{
         SplashScreen.hide();
     }
 
-    validateUser=()=> {
+    validateUser= async () => {
         if(emailEmpty(this.state.email) && passwordEmpty(this.state.password)){
             this.setState({iconError:'exclamation-circle',emailError:'Require',passwordError:'Require'});
         }
@@ -46,11 +55,37 @@ class SignIn extends Component{
                 password:this.state.password
             };
             if(this.state.email === 'admin@gmail.com' && this.state.password === 'admin'){
-                this.props.navigation.navigate('Admin');
-            }else if(this.state.email === 'jarul@gmail.com' && this.state.password === 'jarul'){
-                this.props.navigation.navigate('Home');
+                await AsyncStorage.setItem("role","admin")
+
+                const resetAction = StackActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: 'Admin' })],
+                });
+                this.props.navigation.dispatch(resetAction);
+            }else if(this.state.email === 'teacher@gmail.com' && this.state.password === 'teacher'){
+                await AsyncStorage.setItem("role","teacher")
+
+                const resetAction = StackActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: 'Home' })],
+                });
+                this.props.navigation.dispatch(resetAction);
             }else if(this.state.email === 'parent@gmail.com' && this.state.password === 'parent'){
-                this.props.navigation.navigate('Parent');
+                await AsyncStorage.setItem("role","parent")
+
+                const resetAction = StackActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: 'Parent' })],
+                });
+                this.props.navigation.dispatch(resetAction);
+            }else if(this.state.email === 'student@gmail.com' && this.state.password === 'student'){
+                await AsyncStorage.setItem("role","student")
+
+                const resetAction = StackActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: 'Parent' })],
+                });
+                this.props.navigation.dispatch(resetAction);
             }
         }
 

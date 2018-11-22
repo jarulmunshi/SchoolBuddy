@@ -10,9 +10,13 @@ import {
 } from 'react-native'
 import FAB from 'react-native-fab'
 
-import {WindowsHeight, WindowsWidth} from '../commonComponent/global';
+import {WindowsHeight, WindowsWidth,DisplayAreaView} from '../commonComponent/global';
 import {Header, Footer, CustomMenu, CalendarView, ClassNotesInfo, AddNote, AttendanceList} from '../commonComponent/Common'
 import Color from '../helper/theme/Color'
+
+var date = new Date();
+
+let monthShortName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct', 'Nov', 'Dec']
 
 export default class ManageClass extends Component{
     state = {
@@ -44,59 +48,82 @@ export default class ManageClass extends Component{
         ],
         showCalendar: false,
         showAddNote: false,
-        attendanceList: [
-            {
-                "id":1,
-                "rollNo":1,
-                "name":"VIJAY PATEL",
-                "present":true,
-                "color": "red",
-            },
-            {
-                "id":2,
-                "rollNo":2,
-                "name":"PARTH PATEL",
-                "present":true,
-                "color": "green",
-            },
-            {
-                "id":3,
-                "rollNo":3,
-                "name":"KESHAV SHAH",
-                "present":false,
-                "color": "yellow",
-            },
-            {
-                "id":4,
-                "rollNo":4,
-                "name":"ADITI SHARMA",
-                "present":true,
-                "color": "pink",
-            },
-            {
-                "id":5,
-                "rollNo":5,
-                "name":"RADHIKA JAIN",
-                "present":false,
-                "color": "blue",
-            },
-            {
-                "id":6,
-                "rollNo":6,
-                "name":"JINAL JAIN",
-                "present":true,
-                "color": "purple",
-            },
-            {
-                "id":7,
-                "rollNo":7,
-                "name":"SWEETY SINGH",
-                "present":true,
-                "color": "golden",
-            },
-        ],
+        attendanceList: [],
         title: '',
         description: '',
+        todayDate: date.getDate()+" "+monthShortName[date.getMonth()]+" "+date.getFullYear(),
+        present: 0,
+        absent: 0
+    }
+
+    componentWillMount(){
+        this.setState({
+            attendanceList: [
+                {
+                    "id":1,
+                    "rollNo":1,
+                    "name":"VIJAY PATEL",
+                    "present":true,
+                    "color": "red",
+                },
+                {
+                    "id":2,
+                    "rollNo":2,
+                    "name":"PARTH PATEL",
+                    "present":true,
+                    "color": "green",
+                },
+                {
+                    "id":3,
+                    "rollNo":3,
+                    "name":"KESHAV SHAH",
+                    "present":false,
+                    "color": "yellow",
+                },
+                {
+                    "id":4,
+                    "rollNo":4,
+                    "name":"ADITI SHARMA",
+                    "present":true,
+                    "color": "pink",
+                },
+                {
+                    "id":5,
+                    "rollNo":5,
+                    "name":"RADHIKA JAIN",
+                    "present":false,
+                    "color": "blue",
+                },
+                {
+                    "id":6,
+                    "rollNo":6,
+                    "name":"JINAL JAIN",
+                    "present":true,
+                    "color": "purple",
+                },
+                {
+                    "id":7,
+                    "rollNo":7,
+                    "name":"SWEETY SINGH",
+                    "present":true,
+                    "color": "grey",
+                },
+                {
+                    "id":8,
+                    "rollNo":8,
+                    "name":"SWATI EZHAVA",
+                    "present":false,
+                    "color": "black",
+                },
+            ]
+        })
+    }
+
+    componentDidMount(){
+        this.setState({
+            present: this.state.attendanceList.filter((obj) => obj.present === true).length,
+            absent: this.state.attendanceList.filter((obj) => obj.present === false).length,
+        })
     }
 
     changeActiveState(value){
@@ -121,6 +148,11 @@ export default class ManageClass extends Component{
         let newState = Object.assign({}, this.state);
         newState.attendanceList[id].present = !value;
         this.setState(newState);
+
+        this.setState({
+            present: this.state.attendanceList.filter((obj) => obj.present === true).length,
+            absent: this.state.attendanceList.filter((obj) => obj.present === false).length,
+        })
     }
 
     renderClassNotes(){
@@ -131,7 +163,10 @@ export default class ManageClass extends Component{
 
     renderAttendanceList(){
         return this.state.attendanceList.map(attendance =>
-            <AttendanceList key={attendance.id} notesInfo={attendance} toggleAttendance={(id, value) => this.toggleSwitch(id, value)}/>
+            <AttendanceList key={attendance.id}
+                            notesInfo={attendance}
+                            toggleAttendance={(id, value) => this.toggleSwitch(id, value)}
+            />
         )
     }
 
@@ -141,7 +176,7 @@ export default class ManageClass extends Component{
             'id': 8,
             'title': title,
             'description': description,
-            'createdDate': '12 NOV 2018',
+            'createdDate': date.getDate()+" "+monthShortName[date.getMonth()]+" "+date.getFullYear(),
             'color': 'rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')'
             //'#'+(Math.random()*0xFFFFFF<<0).toString(16) generating random color
 
@@ -167,6 +202,13 @@ export default class ManageClass extends Component{
         this.props.navigation.openDrawer();
     };
 
+    changeDate(day, month, year){
+        this.setState({
+            todayDate: day+" "+monthShortName[month-1]+" "+year,
+            showCalendar: false,
+        })
+    }
+
     render(){
         return(
             <SafeAreaView style={styles.parentContainer}>
@@ -177,7 +219,7 @@ export default class ManageClass extends Component{
                     onBackButtonPress={this.goBack}
                 />
 
-                <View style={{marginTop: 5, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 5, height: DisplayAreaView}}>
 
                     <CustomMenu
                         menus={["Attendance", "Class Notes"]}
@@ -190,26 +232,26 @@ export default class ManageClass extends Component{
                             <View style={{flex: 1}}>
                                 <View style={styles.attendanceContainer}>
                                     <TouchableOpacity onPress={() => this.setState({showCalendar: true})}>
-                                        <View style={{flexDirection: 'row', width: WindowsWidth/3,}}>
+                                        <View style={styles.attendanceViewStyle}>
                                             <Image
                                                 source={require('../images/calendar.png')}
                                                 style={styles.imageStyle}
                                             />
-                                            <Text style={[styles.textStyle, {marginRight: 5}]}>{'11 NOV 2018'}</Text>
+                                            <Text style={[styles.textStyle, {marginRight: 5}]}>{this.state.todayDate}</Text>
                                         </View>
                                     </TouchableOpacity>
 
-                                    <View style={{flexDirection: 'row', width: WindowsWidth/3, justifyContent: 'center'}}>
+                                    <View style={styles.attendanceViewStyle}>
                                         <Text style={[styles.textStyle, {color: 'rgb(109,109,109)', fontSize: 20}]}>{'PRESENT'}</Text>
                                         <View style={[styles.CircleShapeView, {backgroundColor: '#79AF1B'}]}>
-                                            <Text style={{color:'#FFF', fontSize: 14}}>{10}</Text>
+                                            <Text style={{color:'#FFF', fontSize: 14}}>{this.state.present}</Text>
                                         </View>
                                     </View>
 
-                                    <View style={{flexDirection: 'row', width: WindowsWidth/3, justifyContent: 'center'}}>
+                                    <View style={styles.attendanceViewStyle}>
                                         <Text style={[styles.textStyle, {color: 'rgb(109,109,109)', fontSize: 20}]}>{'ABSENT'}</Text>
                                         <View style={[styles.CircleShapeView, {backgroundColor: '#AC0119'}]}>
-                                            <Text style={{color:'#FFF', fontSize: 14}}>{5}</Text>
+                                            <Text style={{color:'#FFF', fontSize: 14}}>{this.state.absent}</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -236,6 +278,7 @@ export default class ManageClass extends Component{
                     (this.state.showCalendar) &&
                     <CalendarView
                         toggle={() => this.hideCalendar()}
+                        changeDate={(day,month,year) => this.changeDate(day, month, year)}
                     />
                 }
 
@@ -271,12 +314,17 @@ const styles = {
         padding: 5,
         width: WindowsWidth
     },
+    attendanceViewStyle: {
+        flexDirection: 'row',
+        width: WindowsWidth/3,
+        justifyContent: 'center'
+    },
     imageStyle: {
-        height: 25,
-        width: 25
+        height: 20,
+        width: 20
     },
     textStyle: {
-        fontSize: 18,
+        fontSize: 17,
         marginLeft: 5,
         color: Color.extraDark,
     },

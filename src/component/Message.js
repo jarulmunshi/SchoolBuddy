@@ -2,16 +2,18 @@ import React, {Component} from 'react'
 import {
     View,
     Text,
-    TouchableOpacity,
     ScrollView,
-    Alert,
-    Image,
-    SafeAreaView
+    SafeAreaView,
+    AsyncStorage
 } from 'react-native'
 import FAB from 'react-native-fab'
 
-import {WindowsHeight,} from '../commonComponent/global';
+import {DisplayAreaView} from '../commonComponent/global';
 import {Header, Footer, ClassNotesInfo, AddNote,} from '../commonComponent/Common'
+
+var date = new Date();
+
+let monthShortName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct', 'Nov', 'Dec']
 
 export default class Message extends Component{
     state = {
@@ -43,6 +45,22 @@ export default class Message extends Component{
             }
         ],
         showAddMessage: false,
+        showFab: false
+    }
+
+    constructor(props){
+        super(props)
+        this.getRole()
+    }
+
+    getRole = async () => {
+        const userRole = await AsyncStorage.getItem("role")
+
+        if(userRole === 'parent'){
+            this.setState({
+                showFab: true
+            })
+        }
     }
 
     hideAddMessage(){
@@ -57,12 +75,12 @@ export default class Message extends Component{
             'id': 8,
             'title': title,
             'description': description,
-            'createdDate': '12 NOV 2018',
+            'createdDate': date.getDate()+" "+monthShortName[date.getMonth()]+" "+date.getFullYear(),
             'color': 'rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')'
         }
         newState.messageList.push(newMessage)
         this.setState(newState);
-        this.setState({showAddMessage: false})
+        this.setState({showAddMessage: false, title: '', description: ''})
     }
 
     changeTitle(value){
@@ -97,12 +115,15 @@ export default class Message extends Component{
                     onBackButtonPress={this.goBack}
                 />
 
-                <View style={{marginTop: 5, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 5, height: DisplayAreaView}}>
                     <View style={{flex: 1}}>
                         <ScrollView>
                             {this.renderMessages()}
                         </ScrollView>
-                        <FAB buttonColor="rgb(2,110,115)" onClickAction={() => this.setState({showAddMessage: true})}/>
+                        {
+                            (this.state.showFab) &&
+                            <FAB buttonColor="rgb(2,110,115)" onClickAction={() => this.setState({showAddMessage: true})}/>
+                        }
                     </View>
                 </View>
 

@@ -2,9 +2,10 @@ import React,{Component} from 'react';
 import {View, Text, SafeAreaView, Image, TouchableOpacity, KeyboardAvoidingView, StatusBar,Alert} from 'react-native';
 import {Input,Button,Link,Header,Footer} from "../commonComponent/Common";
 import Color from './../helper/theme/Color';
-import {WindowsWidth,WindowsHeight} from "../commonComponent/global";
+import {WindowsWidth,WindowsHeight,DisplayAreaView} from "../commonComponent/global";
 import {checkEmail, emailEmpty, passwordEmpty} from "../validation/Validation";
 import Icon from "react-native-vector-icons/FontAwesome";
+
 class ChangePassword extends Component{
     constructor(props){
         super(props);
@@ -72,8 +73,8 @@ class ChangePassword extends Component{
                     isBack={this.state.isBack}
                     onBackButtonPress={this.onBackButtonPress}
                 />
+                <View style={{alignItems: 'center', height: DisplayAreaView}}>
                 <KeyboardAvoidingView enabled={true} keyboardVerticalOffset={100}>
-                <View style={{alignItems: 'center'}}>
                     <View style={{flexDirection: 'row'}}>
                         <View>
                             <Input
@@ -134,9 +135,10 @@ class ChangePassword extends Component{
 
                     <Button style={{paddingTop:20}} onPress={this.validateUser}>SUBMIT</Button>
 
-                </View>
-               <Footer/>
                 </KeyboardAvoidingView>
+                </View>
+
+                <Footer/>
             </SafeAreaView>
         )
     }

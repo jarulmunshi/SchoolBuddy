@@ -5,7 +5,7 @@ import {
     ScrollView
 } from 'react-native'
 
-import {WindowsHeight,} from '../commonComponent/global';
+import {DisplayAreaView} from '../commonComponent/global';
 import {Header, Footer, CommunityInfo} from '../commonComponent/Common'
 
 export default class Community extends Component{
@@ -55,7 +55,7 @@ export default class Community extends Component{
                     isBack={this.state.isBack}
                     onBackButtonPress={this.goBack}
                 />
-                <View style={{marginTop: 5, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 5, height: DisplayAreaView}}>
                     <ScrollView>
                         {this.renderCommunityInfo()}
                     </ScrollView>

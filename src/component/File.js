@@ -5,10 +5,12 @@ import {
     TouchableOpacity,
     ScrollView,
     Alert,
-    SafeAreaView, StatusBar
+    SafeAreaView,
+    StatusBar,
+    AsyncStorage
 } from 'react-native'
 import Color from '../helper/theme/Color'
-import {WindowsHeight} from '../commonComponent/global';
+import {DisplayAreaView} from '../commonComponent/global';
 import {
     FileInfo,
     Footer,
@@ -44,23 +46,34 @@ export default class File extends Component{
         ],
         iName:'long-arrow-left',
         isBack:true,
-        isIcon:true
+        isIcon:true,
+        uploadFile: false
     };
+
+    constructor(props){
+        super(props)
+        this.getRole()
+    }
+
+    getRole = async () => {
+        const userRole = await AsyncStorage.getItem("role")
+
+        if(userRole === 'teacher'){
+            this.setState({
+                uploadFile: true
+            })
+        }
+    }
+
     goBack=()=>{
         this.props.navigation.navigate('StudyMaterial');
     };
-    changeActiveState(value){
-        this.setState({
-            active: value
-        })
-    }
 
     renderClassInfo(){
         return this.state.classList.map(classInfo =>
             <FileInfo key={classInfo.standard} classInfo={classInfo} />
         )
     }
-
 
     render(){
         return(
@@ -74,9 +87,10 @@ export default class File extends Component{
                     isBack={this.state.isBack}
                     isIcon={this.state.isIcon}
                     onBackButtonPress={this.goBack}
+                    uploadFile={this.state.uploadFile}
                 />
 
-                <View style={{marginTop: 10, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 10, height: DisplayAreaView}}>
                     <ScrollView>
                         {this.renderClassInfo()}
                     </ScrollView>

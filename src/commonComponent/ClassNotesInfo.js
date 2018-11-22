@@ -31,7 +31,7 @@ const ClassNotesInfo = (props) => {
 
 const styles = {
     colorView: {
-        width: Platform.OS === 'ios'? 2 : 4,
+        width: 3,
     },
     titleText: {
         color: 'rgb(60,60,60)',

@@ -8,7 +8,7 @@ import {
     SafeAreaView, StatusBar
 } from 'react-native'
 import Color from '../helper/theme/Color'
-import {WindowsHeight} from '../commonComponent/global';
+import {DisplayAreaView} from '../commonComponent/global';
 import {
     StudyMaterialInfo,
     Footer,
@@ -67,9 +67,11 @@ export default class StudyMaterial extends Component{
             active: value
         })
     };
+
     goBack=()=>{
         this.props.navigation.openDrawer();
     };
+
     goNext=()=>{
         this.props.navigation.navigate('File');
     };
@@ -94,7 +96,7 @@ export default class StudyMaterial extends Component{
                     onBackButtonPress={this.goBack}
                 />
 
-                <View style={{marginTop: 10, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 10, height: DisplayAreaView}}>
                     <ScrollView>
                         {this.renderClassInfo()}
                     </ScrollView>

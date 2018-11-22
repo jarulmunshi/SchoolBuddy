@@ -46,7 +46,7 @@ const AttendanceList = (props) => {
 
 const styles = {
     colorView: {
-        width: Platform.OS === 'ios'? 2 : 4,
+        width: 3,
     },
     dataRow: {
         padding: 10,

@@ -40,7 +40,7 @@ const FileInfo = (props) => {
 
 const styles = {
     colorView: {
-        width: 2,
+        width: 3,
     },
     infoContainer: {
         padding: 15,

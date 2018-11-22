@@ -1,10 +1,19 @@
 import React from 'react';
-import {Text, View, TouchableWithoutFeedback, StatusBar, Image} from 'react-native';
+import {
+    Text,
+    View,
+    TouchableWithoutFeedback,
+    StatusBar,
+    Image,
+    Alert,
+    AsyncStorage
+} from 'react-native';
 import Color from './../helper/theme/Color';
 import {WindowsHeight,WindowsWidth} from './global';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {NavigationActions, StackActions} from "react-navigation";
 const Header = (props) =>{
-        const {textStyle,viewStyle,subViewStyle,subViewStyle2,imageContainer1}=headerStyles;
+        const {textStyle,viewStyle,leftIconStyle,subViewStyle2,imageContainer1,rightIconStyle}=headerStyles;
         return(
         <View>
             {/*<StatusBar
@@ -13,15 +22,50 @@ const Header = (props) =>{
                 barStyle="light-content"
             />*/}
             <View style={viewStyle}>
-                <View style={subViewStyle}>
-                    {props.isBack&&
-                    <TouchableWithoutFeedback onPress={()=>{props.onBackButtonPress()}}>
-                        <Icon name={props.iName} size={25} style={{color:Color.headerTextColor,marginLeft:5}}/>
-                    </TouchableWithoutFeedback>}
+                <View style={leftIconStyle}>
+                    {
+                        props.isBack&&
+                        <TouchableWithoutFeedback onPress={()=>{props.onBackButtonPress()}}>
+                            <Icon name={props.iName} size={25} style={{color:Color.headerTextColor,marginLeft:15}}/>
+                        </TouchableWithoutFeedback>
+                    }
 
                 </View>
                 <View style={subViewStyle2}>
                     <Text style={textStyle}>{props.headerText}</Text>
+                </View>
+                <View style={rightIconStyle}>
+                    {
+                        props.isAdmin &&
+                        <TouchableWithoutFeedback onPress={() =>{
+                            Alert.alert(
+                                'Log Out',
+                                'Are you sue you want to logout?',
+                                [
+                                    {text: 'Yes', onPress: async () => {
+                                            await AsyncStorage.removeItem("role")
+
+                                            const resetAction = StackActions.reset({
+                                                index: 0,
+                                                actions: [NavigationActions.navigate({ routeName: 'Login' })],
+                                            });
+                                            props.navigation.dispatch(resetAction);
+                                        }},
+                                    {text: 'No', onPress: () => {}},
+                                ],
+                                { cancelable: false }
+                            )
+                        }}>
+                            <Text style={[textStyle, {fontSize: 18, fontWeight: null}]}>Log Out</Text>
+                        </TouchableWithoutFeedback>
+                    }
+
+                    {
+                        props.uploadFile &&
+                        <TouchableWithoutFeedback onPress={()=>{}}>
+                            <Image style={imageContainer1} source={require('../images/cloudUp.png')}/>
+                        </TouchableWithoutFeedback>
+                    }
                 </View>
                 {/*{props.isIcon &&<Image style={imageContainer1} source={require('../images/cloudUp.png')}/>}*/}
             </View>
@@ -31,19 +75,22 @@ const Header = (props) =>{
 const headerStyles={
     viewStyle:{
         backgroundColor: Color.headerColor,
-        height: WindowsHeight * 0.062,
+        height: 50,
         flexDirection: 'row',
         width:WindowsWidth,
     },
-    subViewStyle:{
-        width: WindowsWidth * 0.08,
-        marginLeft: 15,
-        justifyContent: 'center'
+    leftIconStyle:{
+        width: WindowsWidth * 0.20,
+        justifyContent: 'center',
+    },
+    rightIconStyle:{
+        width: WindowsWidth * 0.20,
+        justifyContent: 'center',
     },
     subViewStyle2:{
-        width:WindowsWidth,
+        width:WindowsWidth - (WindowsWidth * 0.40),
         alignItems:'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     headerStyle:{
         borderColor:'#ddd',
@@ -58,11 +105,11 @@ const headerStyles={
         fontSize:20,
         color:Color.headerTextColor,
         textAlign: 'center',
-        marginRight:WindowsWidth * 0.24,
     },
     imageContainer1: {
-        width: 65,
-        height: 45,
+        width: 25,
+        height: 25,
+        alignSelf: 'center'
     }
 };
 export {Header};

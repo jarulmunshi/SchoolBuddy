@@ -1,8 +1,29 @@
 import React from 'React';
-import {Text,View,Image,TouchableOpacity,SafeAreaView} from 'react-native';
+import {
+    Text,
+    View,
+    Image,
+    TouchableOpacity,
+    SafeAreaView,
+    Alert,
+    AsyncStorage
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {WindowsHeight,WindowsWidth} from './global';
 import Color from './../helper/theme/Color';
+import {NavigationActions, StackActions} from "react-navigation";
+
+/*navigate = (props, key) =>{
+    const resetAction = StackActions.reset({
+        index: 1,
+        actions: [
+            NavigationActions.navigate({ routeName: 'Parent' }),
+            NavigationActions.navigate({ routeName: key })
+        ],
+    });
+    props.navigation.dispatch(resetAction);
+}*/
+
 const drawerImageparent=(props)=> {
     return(
         <SafeAreaView>
@@ -17,16 +38,16 @@ const drawerImageparent=(props)=> {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={{alignItems: 'center',height:WindowsHeight * 0.01}}
-                                  onPress={()=>props.navigation.navigate('StudyMaterial')}>
+                                  onPress={()=> props.navigation.navigate('StudyMaterial')}>
                     <Image onPress={()=>props.navigation.navigate('StudyMaterial')} source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15, width: WindowsWidth * 0.60}} resizeMode="contain"/>
                 </TouchableOpacity>
                 <View style={{top:WindowsHeight * 0.20}}>
                     <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
-                                      onPress={()=>props.navigation.navigate('TodaysClass')}>
+                                      onPress={() => props.navigation.navigate('Home')}>
                         <Text style={style.textStyle}>Attendance / Notes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
-                                      onPress={()=>props.navigation.navigate('TimeTable')}>
+                                      onPress={() => props.navigation.navigate('TimeTable')}>
                         <Text style={style.textStyle}>Time Table</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
@@ -44,7 +65,25 @@ const drawerImageparent=(props)=> {
                     </TouchableOpacity>
                 </View>
                 <View style={{marginTop: WindowsHeight * 0.30 }}>
-                    <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
+                    <TouchableOpacity onPress={()=>{
+                        Alert.alert(
+                            'Log Out',
+                            'Are you sue you want to logout?',
+                            [
+                                {text: 'Yes', onPress: async () => {
+                                        await AsyncStorage.removeItem("role")
+
+                                        const resetAction = StackActions.reset({
+                                            index: 0,
+                                            actions: [NavigationActions.navigate({ routeName: 'Login' })],
+                                        });
+                                        props.navigation.dispatch(resetAction);
+                                    }},
+                                {text: 'No', onPress: () => console.log('OK Pressed')},
+                            ],
+                            { cancelable: false }
+                        )
+                    }}>
                         <Text style={{textAlign: 'center',color:"red",fontSize:25}}>Log out</Text>
                     </TouchableOpacity>
                 </View>

@@ -33,9 +33,9 @@ const inputStyles={
         borderWidth:0.5,
         borderColor:Color.headerColor,
         fontSize:20,
-        height: WindowsHeight * 0.06,
         width:WindowsWidth * 0.8,
-        paddingLeft:15
+        paddingLeft:15,
+        padding: 5
     },
     containerStyle:{
         alignItems:'center',

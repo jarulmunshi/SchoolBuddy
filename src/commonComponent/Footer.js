@@ -1,6 +1,13 @@
 import React from 'react';
-import {Image,View} from 'react-native';
-import {WindowsHeight,WindowsWidth} from './global';
+import {
+    Image,
+    View,
+    Platform
+} from 'react-native';
+import {WindowsHeight,WindowsWidth,} from './global';
+
+const footerHeight = Platform.OS === 'ios' ? 50 : 78
+
 const Footer = (props) =>{
     return(
         <View style={styles.footerStyle}>
@@ -11,10 +18,10 @@ const Footer = (props) =>{
 };
 const styles={
     footerStyle:{
-        top: WindowsHeight - (WindowsHeight * 0.16),
+        top: WindowsHeight - footerHeight,
         //backgroundColor:'red',
         position: 'absolute',
-        height: WindowsHeight * 0.16,
+        height: footerHeight,
         width: WindowsWidth
         //alignItems: 'center'
     }

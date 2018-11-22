@@ -13,7 +13,7 @@ const CalendarView = (props) => {
             <View>
                 <Calendar
                     style={{width:WindowsWidth-50, marginLeft: 25, marginRight: 25}}
-                    onDayPress={(day) => {alert(day.day+" "+day.month+" "+day.year)}}
+                    onDayPress={(day) => {props.changeDate(day.day, day.month, day.year)}}
                 />
             </View>
         </TouchableOpacity>

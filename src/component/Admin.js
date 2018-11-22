@@ -10,7 +10,7 @@ import {
 import FAB from 'react-native-fab'
 
 import Color from '../helper/theme/Color'
-import {WindowsHeight} from '../commonComponent/global';
+import {DisplayAreaView} from '../commonComponent/global';
 import {CustomMenu, ClassInfoList, Footer, TeacherInfoList, CommunityInfo, Header} from '../commonComponent/Common'
 
 export default class Admin extends Component{
@@ -167,9 +167,9 @@ export default class Admin extends Component{
         return(
             <SafeAreaView style={styles.parentContainer}>
 
-                <Header headerText={"School Buddy"}/>
+                <Header headerText={"School Buddy"} isAdmin={true} navigation={this.props.navigation}/>
 
-                <View style={{marginTop: 20, height: WindowsHeight - (WindowsHeight * 0.222)}}>
+                <View style={{marginTop: 20, height: DisplayAreaView}}>
 
                     <CustomMenu
                         menus={["Class", "Teacher", "Community"]}

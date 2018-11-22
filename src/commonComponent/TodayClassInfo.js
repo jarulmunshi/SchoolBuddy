@@ -38,7 +38,7 @@ const TodayClassInfo = (props) => {
 
 const styles = {
     colorView: {
-        width: 2,
+        width: 3,
     },
     timingContainer: {
         padding: 10,

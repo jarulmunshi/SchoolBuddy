@@ -1,8 +1,18 @@
 import React from 'React';
-import {Text,View,Image,TouchableOpacity,SafeAreaView} from 'react-native';
+import {
+    Text,
+    View,
+    Image,
+    TouchableOpacity,
+    SafeAreaView,
+    Alert,
+    AsyncStorage
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {WindowsHeight,WindowsWidth} from './global';
 import Color from './../helper/theme/Color';
+import {NavigationActions, StackActions} from "react-navigation";
+
 const drawerImage=(props)=> {
     return(
     <SafeAreaView>
@@ -37,7 +47,25 @@ const drawerImage=(props)=> {
                 </TouchableOpacity>
             </View>
             <View style={{marginTop: WindowsHeight * 0.45 }}>
-                <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
+                <TouchableOpacity onPress={()=>{
+                    Alert.alert(
+                        'Log Out',
+                        'Are you sue you want to logout?',
+                        [
+                            {text: 'Yes', onPress: async () => {
+                                    await AsyncStorage.removeItem("role")
+
+                                    const resetAction = StackActions.reset({
+                                        index: 0,
+                                        actions: [NavigationActions.navigate({ routeName: 'Login' })],
+                                    });
+                                    props.navigation.dispatch(resetAction);
+                                }},
+                            {text: 'No', onPress: () => console.log('OK Pressed')},
+                        ],
+                        { cancelable: false }
+                    )
+                }}>
                     <Text style={{textAlign: 'center',color:"red",fontSize:25}}>Log out</Text>
                 </TouchableOpacity>
             </View>

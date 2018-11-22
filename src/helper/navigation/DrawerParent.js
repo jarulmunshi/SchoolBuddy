@@ -12,10 +12,11 @@ import File from "../../component/File";
 import TimeTable from "../../component/TimeTable";
 import Community from "../../component/Community";
 import Message from "../../component/Message";
+import NotesList from "../../component/NotesList";
 
 const DrawerParents = DrawerNavigator({
         Home:{
-            screen:Home
+            screen:NotesList
         },
         ChangePassword:{
             screen:ChangePassword

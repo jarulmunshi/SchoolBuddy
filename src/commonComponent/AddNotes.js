@@ -3,7 +3,7 @@ import {
     View,
     TouchableOpacity,
     Text,
-    TextInput
+    Alert
 } from 'react-native'
 
 import {WindowsHeight, WindowsWidth, MyriadFont} from '../commonComponent/global';
@@ -35,7 +35,12 @@ const AddNote = (props) => {
                         onChange={(value) => props.description(value)}
                     />
 
-                    <Button style={{marginLeft: 2, marginTop: 10}} onPress={() => props.newNote(props.titleValue, props.descriptionValue)}>SUBMIT</Button>
+                    <Button style={{marginLeft: 2, marginTop: 10}} onPress={() => {
+                        if(props.titleValue.trim().length === 0 || props.descriptionValue.trim().length === 0)
+                            Alert.alert("Error", "Please enter title and message")
+                        else
+                            props.newNote(props.titleValue, props.descriptionValue)
+                    }}>SUBMIT</Button>
                 </View>
             </View>
         </TouchableOpacity>
