@@ -100,7 +100,9 @@ export default class NotesList extends Component {
             title:Object.values(temp)[0],
             data:Object.values(temp)[1]
         })
-        this.setState({dataList:mtemp,allData:obj,markDates:dateObj})
+        this.setState({dataList:mtemp,allData:obj,markDates:dateObj});
+        console.log(obj)
+        debugger
     }
 
     renderItem = (item) => {
@@ -124,7 +126,8 @@ export default class NotesList extends Component {
     }
 
     dateByData(date) {
-        if (date in this.state.markDates) {
+        debugger
+        if (this.state.allData.some((d) => d.title.toString() === date.toString())) {
             let dateObj = {};
             if (date in this.state.markDates) {
                 const data = _.groupBy(this.state.classList, 'date');
@@ -152,21 +155,25 @@ export default class NotesList extends Component {
 
             })
             dateObj[date] = {selected: true, marked: false, dotColor: 'green'}
+            debugger;
             console.log(dateObj)
             this.setState({ dataList: [], markDates: dateObj})
         }
     }
+
     renderEmptySection = () =>{
         return(
-            <Card>
-                <CardSection>
-                    <View style={[styles.colorView, {backgroundColor: 'red'}]}/>
+            <View style={{marginTop: 20}}>
+                <Card>
+                    <CardSection>
+                        <View style={[styles.colorView, {backgroundColor: 'red'}]}/>
 
-                    <View style={styles.infoContainer}>
-                        <Text style={styles.standardContainer}>No Note Available</Text>
-                    </View>
-                </CardSection>
-            </Card>
+                        <View style={styles.infoContainer}>
+                            <Text style={styles.standardContainer}>No Note Available</Text>
+                        </View>
+                    </CardSection>
+                </Card>
+            </View>
         )
     }
 
@@ -202,6 +209,7 @@ export default class NotesList extends Component {
                             <SectionList
                                 renderItem={({ item, index, section }) => this.renderItem(item)}
                                 sections={this.state.dataList}
+                                style={{marginTop: 20}}
                             />
                         }
 
@@ -212,6 +220,7 @@ export default class NotesList extends Component {
         );
     }
 }
+
 const styles = StyleSheet.create({
     colorView: {
         width: 2,

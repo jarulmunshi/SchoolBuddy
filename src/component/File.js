@@ -7,7 +7,8 @@ import {
     Alert,
     SafeAreaView,
     StatusBar,
-    AsyncStorage
+    AsyncStorage,
+    BackHandler
 } from 'react-native'
 import Color from '../helper/theme/Color'
 import {DisplayAreaView} from '../commonComponent/global';
@@ -52,6 +53,7 @@ export default class File extends Component{
 
     constructor(props){
         super(props)
+        this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
         this.getRole()
     }
 
@@ -63,6 +65,19 @@ export default class File extends Component{
                 uploadFile: true
             })
         }
+    }
+
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+    }
+
+    handleBackButtonClick() {
+        this.props.navigation.navigate('StudyMaterial');
+        return true;
     }
 
     goBack=()=>{

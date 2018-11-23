@@ -13,6 +13,11 @@ import {WindowsHeight,WindowsWidth} from './global';
 import Color from './../helper/theme/Color';
 import {NavigationActions, StackActions} from "react-navigation";
 
+navigate = (props, key) =>{
+    props.navigation.navigate(key);
+    props.navigation.closeDrawer()
+}
+
 const drawerImage=(props)=> {
     return(
     <SafeAreaView>
@@ -31,18 +36,18 @@ const drawerImage=(props)=> {
             </View>
             <View style={{top:WindowsHeight * 0.25}}>
                 <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
-                                  onPress={()=>props.navigation.navigate('TodaysClass')}>
+                                  onPress={()=>navigate(props,'TodaysClass')}>
                     <Text style={style.textStyle}>Today's Classes</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.viewStyle}
-                                  onPress={()=>props.navigation.navigate('StudyMaterial')}>
+                                  onPress={()=>navigate(props,'StudyMaterial')}>
                     <Text style={style.textStyle}>Study Materials</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.viewStyle}
-                                  onPress={()=>props.navigation.navigate('ManageClass')}>
+                                  onPress={()=>navigate(props,'ManageClass')}>
                     <Text style={style.textStyle}>Manage Class</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('ChangePassword')}>
+                <TouchableOpacity style={style.viewStyle} onPress={()=>navigate(props,'ChangePassword')}>
                     <Text style={style.textStyle}>Change Password</Text>
                 </TouchableOpacity>
             </View>

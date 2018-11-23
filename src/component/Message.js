@@ -65,7 +65,10 @@ export default class Message extends Component{
 
     hideAddMessage(){
         this.setState({
-            showAddMessage: false
+            showAddMessage: false,
+            title: '',
+            description: '',
+            showFab: true
         })
     }
 
@@ -80,7 +83,7 @@ export default class Message extends Component{
         }
         newState.messageList.push(newMessage)
         this.setState(newState);
-        this.setState({showAddMessage: false, title: '', description: ''})
+        this.setState({showAddMessage: false, showFab: true, title: '', description: ''})
     }
 
     changeTitle(value){
@@ -122,7 +125,7 @@ export default class Message extends Component{
                         </ScrollView>
                         {
                             (this.state.showFab) &&
-                            <FAB buttonColor="rgb(2,110,115)" onClickAction={() => this.setState({showAddMessage: true})}/>
+                            <FAB buttonColor="rgb(2,110,115)" onClickAction={() => this.setState({showAddMessage: true, showFab: false})}/>
                         }
                     </View>
                 </View>

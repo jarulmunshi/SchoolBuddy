@@ -3,7 +3,9 @@ import {
     View,
     TouchableOpacity,
     Text,
-    Alert
+    Alert,
+    Image,
+    Platform
 } from 'react-native'
 
 import {WindowsHeight, WindowsWidth, MyriadFont} from '../commonComponent/global';
@@ -11,51 +13,62 @@ import {Input, Button} from './Common'
 
 const AddNote = (props) => {
     return(
-        <TouchableOpacity  style={{height:WindowsHeight,width:WindowsWidth,backgroundColor:'rgba(0,0,0,0.5)',position:'absolute',justifyContent:'center',alignItems:'center'}} onPress={props.toggle}>
-            <View style={styles.viewContainer}>
+        <View style={{backgroundColor:'rgba(0,0,0,0.5)', height: WindowsHeight, width: WindowsWidth, position: 'absolute'}}>
+        <TouchableOpacity style={{height: 40, position: 'absolute', top: Platform.OS === 'ios'? 20 : 0, right: 5}} onPress={props.toggle}>
+            <Image source={require('../images/close.png')}></Image>
+        </TouchableOpacity>
+            <View style={{height:WindowsHeight-40,width:WindowsWidth,position:'absolute',top: 40,justifyContent:'center',alignItems:'center'}}>
+                <View style={styles.viewContainer}>
                 <View style={styles.headingContainer}>
                     <Text style={styles.textStyle}>{props.heading}</Text>
                 </View>
                 <View style={{margin: 10}}>
-                    <Input
-                        borderWidth={1}
-                        placeholder={'Title'}
-                        placeholderTextColor={'rgb(119,119,119)'}
-                        color={'rgb(119,119,119)'}
-                        onChange={(value) => props.title(value)}
-                    />
+                    <View style={{flexDirection: 'row'}}>
+                        <Input
+                            borderWidth={1}
+                            placeholder={'Title'}
+                            placeholderTextColor={'rgb(119,119,119)'}
+                            color={'rgb(119,119,119)'}
+                            onChange={(value) => props.title(value)}
+                        />
+                        <Text style={{fontSize: 25, color: 'red'}}>*</Text>
+                    </View>
 
-                    <Input
-                        multiline={true}
-                        borderWidth={1}
-                        placeholder={'Details'}
-                        placeholderTextColor={'rgb(119,119,119)'}
-                        color={'rgb(119,119,119)'}
-                        height={150}
-                        onChange={(value) => props.description(value)}
-                    />
+                    <View style={{flexDirection: 'row'}}>
+                        <Input
+                            multiline={true}
+                            borderWidth={1}
+                            placeholder={'Details'}
+                            placeholderTextColor={'rgb(119,119,119)'}
+                            color={'rgb(119,119,119)'}
+                            height={150}
+                            onChange={(value) => props.description(value)}
+                        />
+
+                        <Text style={{fontSize: 25, color: 'red'}}>*</Text>
+                    </View>
 
                     <Button style={{marginLeft: 2, marginTop: 10}} onPress={() => {
                         if(props.titleValue.trim().length === 0 || props.descriptionValue.trim().length === 0)
-                            Alert.alert("Error", "Please enter title and message")
+                            Alert.alert("Please enter Title and Message")
                         else
                             props.newNote(props.titleValue, props.descriptionValue)
                     }}>SUBMIT</Button>
                 </View>
             </View>
-        </TouchableOpacity>
+            </View>
+        </View>
     )
 }
 
 const styles = {
     viewContainer: {
-        width:WindowsWidth-50,
         marginLeft: 25,
         marginRight: 25,
         backgroundColor: 'rgb(217,217,217)'
     },
     headingContainer: {
-        height: 30,
+        height: 40,
         backgroundColor: 'rgb(51,51,51)',
         alignItems: 'center',
         justifyContent: 'center'

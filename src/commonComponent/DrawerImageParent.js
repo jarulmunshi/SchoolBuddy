@@ -13,16 +13,10 @@ import {WindowsHeight,WindowsWidth} from './global';
 import Color from './../helper/theme/Color';
 import {NavigationActions, StackActions} from "react-navigation";
 
-/*navigate = (props, key) =>{
-    const resetAction = StackActions.reset({
-        index: 1,
-        actions: [
-            NavigationActions.navigate({ routeName: 'Parent' }),
-            NavigationActions.navigate({ routeName: key })
-        ],
-    });
-    props.navigation.dispatch(resetAction);
-}*/
+navigate = (props, key) =>{
+    props.navigation.navigate(key);
+    props.navigation.closeDrawer()
+}
 
 const drawerImageparent=(props)=> {
     return(
@@ -38,29 +32,29 @@ const drawerImageparent=(props)=> {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={{alignItems: 'center',height:WindowsHeight * 0.01}}
-                                  onPress={()=> props.navigation.navigate('StudyMaterial')}>
-                    <Image onPress={()=>props.navigation.navigate('StudyMaterial')} source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15, width: WindowsWidth * 0.60}} resizeMode="contain"/>
+                                  onPress={()=> navigate(props,'StudyMaterial')}>
+                    <Image onPress={()=>navigate(props,'StudyMaterial')} source={require('./../images/CoberArt1024-500.png')} style={{height:WindowsHeight * 0.15, width: WindowsWidth * 0.60}} resizeMode="contain"/>
                 </TouchableOpacity>
                 <View style={{top:WindowsHeight * 0.20}}>
                     <TouchableOpacity style={[style.viewStyle,{borderTopWidth:1,borderTopColor:'gray'}]}
-                                      onPress={() => props.navigation.navigate('Home')}>
+                                      onPress={() => navigate(props,'Home')}>
                         <Text style={style.textStyle}>Attendance / Notes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
-                                      onPress={() => props.navigation.navigate('TimeTable')}>
+                                      onPress={() => navigate(props,'TimeTable')}>
                         <Text style={style.textStyle}>Time Table</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.viewStyle}
-                                      onPress={()=>props.navigation.navigate('Community')}>
+                                      onPress={()=>navigate(props,'Community')}>
                         <Text style={style.textStyle}>Community</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('Message')}>
+                    <TouchableOpacity style={style.viewStyle} onPress={()=>navigate(props,'Message')}>
                         <Text style={style.textStyle}>Messages</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('StudyMaterial')}>
+                    <TouchableOpacity style={style.viewStyle} onPress={()=>navigate(props,'StudyMaterial')}>
                         <Text style={style.textStyle}>Study Materials</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={style.viewStyle} onPress={()=>props.navigation.navigate('ChangePassword')}>
+                    <TouchableOpacity style={style.viewStyle} onPress={()=>navigate(props,'ChangePassword')}>
                         <Text style={style.textStyle}>Change Password</Text>
                     </TouchableOpacity>
                 </View>

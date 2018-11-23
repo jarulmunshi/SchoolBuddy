@@ -53,7 +53,7 @@ export default class ManageClass extends Component{
         description: '',
         todayDate: date.getDate()+" "+monthShortName[date.getMonth()]+" "+date.getFullYear(),
         present: 0,
-        absent: 0
+        absent: 0,
     }
 
     componentWillMount(){
@@ -140,7 +140,9 @@ export default class ManageClass extends Component{
 
     hideAddNote(){
         this.setState({
-            showAddNote: false
+            showAddNote: false,
+            title: '',
+            description: ''
         })
     }
 
@@ -183,7 +185,7 @@ export default class ManageClass extends Component{
         }
         newState.notesList.push(newNote)
         this.setState(newState);
-        this.setState({showAddNote: false})
+        this.setState({showAddNote: false, title: '', description: ''})
     }
 
     changeTitle(value){
